@@ -165,6 +165,23 @@
       66%  { background: #ffd700; }
       100% { background: #ffffff; }
     }
+    /* Play button styling */
+    #playSongBtn {
+      font-size: 20px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: #ff1493;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 15px pink;
+      margin-top: 20px;
+      transition: transform 0.2s;
+    }
+
+    #playSongBtn:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -178,6 +195,8 @@
   </div>
 
   <h2>🎶 A special day just for you 🎶</h2>
+  <!-- Play button for your song -->
+  <button id="playSongBtn">▶ Play Song</button>
 
   <!-- Happy Birthday song -->
   <audio id="birthdaySong" autoplay loop>
@@ -215,6 +234,18 @@
   <div class="question">💍 Will you be my Ardhagni in this life? ❤️</div>
 
   <script>
+    // Play/Pause button functionality
+    const playBtn = document.getElementById("playSongBtn");
+    const mySong = document.getElementById("mySong");
+    playBtn.addEventListener("click", () => {
+      if(mySong.paused){
+        mySong.play();
+        playBtn.innerText = "⏸ Pause Song";
+      } else {
+        mySong.pause();
+        playBtn.innerText = "▶ Play Song";
+      }
+    });
     // Floating hearts
     function createHeart() {
       const heart = document.createElement("div");
