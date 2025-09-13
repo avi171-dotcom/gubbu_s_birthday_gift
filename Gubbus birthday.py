@@ -1,13 +1,12 @@
 import os
-import webbrowser
 
-def create_birthday_page(name):
+def create_birthday_page(Gubbu):
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Happy Birthday {name} 🎂❤️</title>
+        <title>Happy Birthday {Gubbu} 🎂❤️</title>
         <style>
             body {{
                 text-align: center;
@@ -44,7 +43,7 @@ def create_birthday_page(name):
         </style>
     </head>
     <body>
-        <h1>Happy Birthday {name}! 🎉🎂</h1>
+        <h1>Happy Birthday {Gubbu}! 🎉🎂</h1>
         <div class="cake">
             <img src="https://i.ibb.co/3sfWwXZ/cake-with-candles.png" alt="Cake" width="300">
         </div>
@@ -68,9 +67,7 @@ def create_birthday_page(name):
     with open("birthday_page.html", "w", encoding="utf-8") as f:
         f.write(html_content)
 
-    # Open in browser
-    file_path = os.path.abspath("birthday_page.html")
-    webbrowser.open(f"file://{file_path}")
+    print("✅ Birthday page created! Open 'birthday_page.html' in your browser.")
 
 # Replace with your girlfriend's name
 create_birthday_page("My Love")
